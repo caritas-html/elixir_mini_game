@@ -1,5 +1,5 @@
 defmodule ElixirGame.Player do
-  @required_fields [:life, :name, :move_strong, :move_avg, :move_weak, :move_heal]
+  @required_fields [:life, :name, :moves]
 
   @enforce_keys @required_fields
   defstruct @required_fields
@@ -9,10 +9,12 @@ defmodule ElixirGame.Player do
   def build(name, move_strong, move_avg, move_weak, move_heal) do
     %ElixirGame.Player{
       name: name,
-      move_strong: move_strong,
-      move_avg: move_avg,
-      move_weak: move_weak,
-      move_heal: move_heal,
+      moves: %{
+        move_strong: move_strong,
+        move_avg: move_avg,
+        move_weak: move_weak,
+        move_heal: move_heal,
+      },
       life: @max_life
     }
   end
