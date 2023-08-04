@@ -6,4 +6,9 @@ defmodule ElixirGame.Game.Status do
       IO.inspect(Manager.info())
       IO.puts("---------------------")
     end
+
+    def print_error_message(move) do
+      IO.puts("\n #{move} is not a valid move! \n")
+      IO.puts("---------------------")
+    end
 end
