@@ -1,5 +1,13 @@
 defmodule ElixirGame.Game.Actions do
   alias ElixirGame.{Manager, Player}
+  alias ElixirGame.Game.Actions.Attack
+
+  def attack(move) do
+    case Manager.turn() do
+      :player -> Attack.attack_opponent(:computer, move)
+      :computer -> Attack.attack_opponent(:player, move)
+    end
+  end
 
   def fetch_move(move) do
     Manager.player()

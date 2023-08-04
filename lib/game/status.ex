@@ -11,4 +11,6 @@ defmodule ElixirGame.Game.Status do
       IO.puts("\n #{move} is not a valid move! \n")
       IO.puts("---------------------")
     end
+
+    def turn, do: Map.get(Manager.info(), :turn)
 end

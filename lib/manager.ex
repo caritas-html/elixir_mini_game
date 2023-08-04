@@ -11,4 +11,5 @@ defmodule ElixirGame.Manager do
   end
 
   def player, do: Map.get(info(), :player) # returns the player struct
+  def turn, do: Map.get(info(), :turn) # returns the turn atom
 end
